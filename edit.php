@@ -55,7 +55,7 @@ if(count($_POST) > 0) {
 		);
 	}
 } else {
-	if(isset($_GET['item_uuid'])) {
+	if(isset($_GET['token_uuid'])) {
 		$item_uuid = $_GET['item_uuid'];
 		$row = do_sql($db, "SELECT * FROM better_provisioning_tokens WHERE token_uuid = :token_uuid", array(':token_uuid' => $token_uuid));
 		$extension = $row['extension'];
@@ -103,11 +103,13 @@ if(count($_POST) > 0) {
 								<select type="text" name="type">
 									<?php
 									foreach(scandir(__DIR__."/provisioning") as $option) {
-										$selected = "";
-										if($option == $type) {
-											$seleceted = " selected";
+										if($option != "." && $option != "..") {
+											$selected = "";
+											if($option == $type) {
+												$seleceted = " selected";
+											}
+											echo "<option value=\"".sanatize($option)."\"$selected>".sanatize($option)."</option>";
 										}
-										echo "<option value=\"".sanatize($option)."\"$selected>".sanatize($option)."</option>";
 									}
 									?>
 								</select>

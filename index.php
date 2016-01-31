@@ -45,10 +45,10 @@ require_once __DIR__."/resources/utils.php";
 			<?php
 			$rowclass = "row_style0";
 			foreach(do_sql($db, "SELECT token_uuid, type FROM better_provisioning_tokens") as $token) {
-				echo "<tr href=\"edit.php?provision=".$row['token_uuid']."\">";
-				echo "<td class=\"$rowclass\"></td>";
-				echo "<td class=\"$rowclass\">".$row['type']."</td>";
-				echo "<td class=\"$rowclass\">[<a href=\"send.php?provision=".$row['token_uuid']."\">Send</a>]</td>";
+				echo "<tr href=\"edit.php?token_uuid=".$token['token_uuid']."\">";
+				echo "<td class=\"$rowclass\">(we dont have this yet)</td>";
+				echo "<td class=\"$rowclass\">".$token['type']."</td>";
+				echo "<td class=\"$rowclass\">[<a href=\"send.php?token_uuid=".$row['token_uuid']."\">Send</a>]</td>";
 				echo "</tr>";
 				if($rowclass == "row_style0") {
 					$rowclass = "row_style1";
