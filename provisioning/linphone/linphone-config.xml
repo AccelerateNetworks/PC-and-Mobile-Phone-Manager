@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns="http://www.linphone.org/xsds/lpconfig.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.linphone.org/xsds/lpconfig.xsd lpconfig.xsd">
+<section name="proxy_0">
+  <entry name="reg_proxy">sip:{$extension.accountcode}</entry>
+  <entry name="reg_identity">sip:{$extension.extension}@{$extension.accountcode}</entry>
+  <entry name="reg_expires">1</entry>
+  <entry name="reg_sendergister">1</entry>
+</section>
+<secton name="auth_0">
+  <entry name="username">{$extension.extension}</entry>
+  <entry name="userid">{$extension.extension}</entry>
+  <entry name="passwd">{$extension.password}</entry>
+  <entry name="realm">{$extension.accountcode}</entry>
+</section>

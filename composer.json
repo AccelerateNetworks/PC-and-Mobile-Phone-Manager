@@ -1,0 +1,16 @@
+{
+    "name": "callpipe/better-provisioning",
+    "description": "A more complex provisioning tool for FusionPBX",
+    "type": "fusionpbx-app",
+    "require": {
+        "icyapril/cryptolib": "dev-master"
+    },
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "Finn",
+            "email": "finn@callpipe.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
