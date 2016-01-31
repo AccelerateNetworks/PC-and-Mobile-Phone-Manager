@@ -17,7 +17,7 @@ require_once "resources/paging.php";
 require_once __DIR__."/vendor/autoload.php";
 require_once __DIR__."/resources/utils.php";
 
-use IcyApril;
+use IcyApril\CryptoLib;
 
 $extension = "";
 $type = "linphone";
