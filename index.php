@@ -62,4 +62,4 @@ require_once __DIR__."/resources/utils.php";
 	</tr>
 </table>
 <?php
-require_once "resources/footer.php";
+require_once "footer.php";
