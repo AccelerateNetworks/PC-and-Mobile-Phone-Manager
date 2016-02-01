@@ -23,4 +23,5 @@
 </section>
 <section name="app">
   <entry name="sharing_server">https://{$extension.accountcode}/app/better-provisioning/sharing.php</entry>
+</section>
 </config>
