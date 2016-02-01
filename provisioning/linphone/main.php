@@ -9,6 +9,7 @@ function do_provision($extension, $token, $db) {
     $redirect_uri .= "%3A//".$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF'];
     $redirect_uri .= "?secret=".$_GET['secret']."&noredirect=";
     header("Location: $redirect_uri");
+    echo "<h1>We're provisioning Linphone, sit tight...";
   } else {
     require_once "resources/templates/engine/smarty/Smarty.class.php";
     $smarty = new Smarty();
