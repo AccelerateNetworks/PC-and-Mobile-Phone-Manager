@@ -7,7 +7,7 @@ function do_provision($extension, $token, $db) {
       $redirect_uri .= "s";
     }
     $redirect_uri .= "%3A//".$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF'];
-    $redirect_uri .= "?token=".$_GET['token']."&noredirect=";
+    $redirect_uri .= "?secret=".$_GET['secret']."&noredirect=";
     header("Location: $redirect_uri");
   } else {
     require_once "resources/templates/engine/smarty/Smarty.class.php";
