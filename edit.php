@@ -59,9 +59,9 @@ if(count($_POST) > 0) {
 		$token_uuid = $_GET['token_uuid'];
 		$row = do_sql($db, "SELECT * FROM better_provisioning_tokens WHERE token_uuid = :token_uuid", array(':token_uuid' => $token_uuid));
 		if(count($row) > 0) {
-			$extension = $row['extension'];
-			$type = $row['type'];
-			$secret = $row['secret'];
+			$extension = $row[0]['extension'];
+			$type = $row[0]['type'];
+			$secret = $row[0]['secret'];
 			$new_item = False;
 			$action_url = $_SERVER['PHP_SELF']."?token_uuid=".sanatize($token_uuid);
 		} else {
