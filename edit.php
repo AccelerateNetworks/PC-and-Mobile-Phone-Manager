@@ -21,7 +21,7 @@ use IcyApril\CryptoLib;
 
 $extension = "";
 $type = "linphone";
-$secret = "";
+$secret = "hi";
 $new_item = True;
 $token_uuid;
 
