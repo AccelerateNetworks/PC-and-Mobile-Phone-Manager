@@ -3,12 +3,24 @@
 <section name="proxy_0">
   <entry name="reg_proxy">sip:{$extension.accountcode}</entry>
   <entry name="reg_identity">sip:{$extension.extension}@{$extension.accountcode}</entry>
-  <entry name="reg_expires">1</entry>
+  <entry name="quality_reporting_enabled">1</entry>
+  <entry name="quality_reporting_interval">60</entry>
+  <entry name="reg_expires">3600</entry>
   <entry name="reg_sendergister">1</entry>
+  <entry name="publish">0</entry>
+  <entry name="avpf">0</entry>
+  <entry name="avpf_rr_interval">0</entry>
+  <entry name="dial_escape_plus">0</entry>
 </section>
 <section name="auth_0">
   <entry name="username">{$extension.extension}</entry>
-  <entry name="userid">{$extension.extension}</entry>
   <entry name="passwd">{$extension.password}</entry>
   <entry name="realm">{$extension.accountcode}</entry>
+</section>
+<section name="misc">
+  <entry name="file_transfer_server_url">https://{$extension.accountcode}/app/better-provisioning/sharing.php</entry>
+  <entry name="log_collection_upload_server_url">https://{$extension.accountcode}/app/better-provisioning/log_collection.php</entry>
+</section>
+<section name="sip">
+  <entry name="default_proxy">0</entry>
 </section>
