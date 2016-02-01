@@ -15,7 +15,5 @@ if(!isset($_GET['noredirect'])) {
   if($_GET['noredirect'] == "debug") {
     $smarty->debugging = true;
   }
-  if(!$smarty->fetch(__DIR__."/linphone-config.xml")) {
-    die("Failed to render config: <b>".$smraty->getError()."</b>");
-  }
+  $smarty->display(__DIR__."/linphone-config.xml");
 }
