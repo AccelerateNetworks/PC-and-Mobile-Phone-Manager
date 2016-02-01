@@ -46,3 +46,8 @@ $z++;
 $apps[$x]['db'][$y]['fields'][$z]['name'] = "type";
 $apps[$x]['db'][$y]['fields'][$z]['type'] = "text";
 $apps[$x]['db'][$y]['fields'][$z]['description']['en-us'] = "The type of provisioning this is";
+
+$z++;
+$apps[$x]['db'][$y]['fields'][$z]['name'] = "active";
+$apps[$x]['db'][$y]['fields'][$z]['type'] = "bool";
+$apps[$x]['db'][$y]['fields'][$z]['description']['en-us'] = "Determines if this provisioning token should still be accepted";
