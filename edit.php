@@ -58,11 +58,15 @@ if(count($_POST) > 0) {
 	if(isset($_GET['token_uuid'])) {
 		$item_uuid = $_GET['item_uuid'];
 		$row = do_sql($db, "SELECT * FROM better_provisioning_tokens WHERE token_uuid = :token_uuid", array(':token_uuid' => $token_uuid));
-		$extension = $row['extension'];
-		$type = $row['type'];
-		$secret = $row['secret'];
-		$new_item = False;
-		$action_url = $_SERVER['PHP_SELF']."?token_uuid=".sanatize($token_uuid);
+		if(count($row) > 0) {
+			$extension = $row['extension'];
+			$type = $row['type'];
+			$secret = $row['secret'];
+			$new_item = False;
+			$action_url = $_SERVER['PHP_SELF']."?token_uuid=".sanatize($token_uuid);
+		} else {
+			$_SESSION['message'] = "No such token!";
+		}
 	}
 }
 ?>
