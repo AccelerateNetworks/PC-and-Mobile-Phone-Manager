@@ -1,5 +1,5 @@
 <?php
-function do_provision($extension) {
+function do_provision($extension, $token, $db) {
   if(!isset($_GET['noredirect'])) {
     $redirect_uri = "linphone-config://";
     $redirect_uri .= "http";
@@ -13,6 +13,7 @@ function do_provision($extension) {
     require_once "resources/templates/engine/smarty/Smarty.class.php";
     $smarty = new Smarty();
     $smarty->assign("extension", $extension);
+    $smarty->assign("token", $token);
     if($_GET['noredirect'] == "debug") {
       $smarty->debugging = true;
     }

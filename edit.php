@@ -123,7 +123,7 @@ if(count($_POST) > 0) {
 						<tr>
 							<td class="vncellreq" valign="top" align="left" nowrap="nowrap">Secret</td>
 							<td class="vtable" valign="top" align="left" nowrap="nowrap">
-								<input type="password" name="secert" class="secert" value="<?php echo sanatize($secret); ?>" onmouseover="this.setAttribute('type', 'text')" onmouseout="this.setAttribute('type', 'password')"/>
+								<input type="password" name="secret" class="secret" value="<?php echo sanatize($secret); ?>" onmouseover="this.setAttribute('type', 'text')" onmouseout="this.setAttribute('type', 'password')"/>
 							</td>
 						</tr>
 						<?php } ?>
