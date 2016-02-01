@@ -65,7 +65,7 @@ if(count($_POST) > 0) {
 			$new_item = False;
 			$action_url = $_SERVER['PHP_SELF']."?token_uuid=".sanatize($token_uuid);
 		} else {
-			$_SESSION['message'] = "No such token!";
+			$_SESSION['message'] = "No such token $token_uuid!";
 		}
 	}
 }
