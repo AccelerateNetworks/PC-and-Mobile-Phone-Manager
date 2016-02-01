@@ -56,7 +56,7 @@ if(count($_POST) > 0) {
 	}
 } else {
 	if(isset($_GET['token_uuid'])) {
-		$token_uuid = $_GET['item_uuid'];
+		$token_uuid = $_GET['token_uuid'];
 		$row = do_sql($db, "SELECT * FROM better_provisioning_tokens WHERE token_uuid = :token_uuid", array(':token_uuid' => $token_uuid));
 		if(count($row) > 0) {
 			$extension = $row['extension'];
