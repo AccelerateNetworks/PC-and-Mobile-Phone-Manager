@@ -12,5 +12,5 @@ if(!isset($_GET['noredirect'])) {
   require_once "resources/templates/engine/smarty/Smarty.class.php";
   $smarty = new Smarty();
   $smarty->assign("extension", $extension);
-  $smarty->fetch("linphone-config.xml");
+  $smarty->fetch(__DIR__."/linphone-config.xml");
 }
