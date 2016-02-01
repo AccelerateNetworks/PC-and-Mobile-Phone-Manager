@@ -62,7 +62,6 @@ if(count($_POST) > 0) {
 			$extension = $row[0]['extension'];
 			$type = $row[0]['type'];
 			$secret = $row[0]['secret'];
-			error_log($secret);
 			$new_item = False;
 			$action_url = $_SERVER['PHP_SELF']."?token_uuid=".sanatize($token_uuid);
 		} else {
@@ -124,7 +123,7 @@ if(count($_POST) > 0) {
 						<tr>
 							<td class="vncellreq" valign="top" align="left" nowrap="nowrap">Secret</td>
 							<td class="vtable" valign="top" align="left" nowrap="nowrap">
-								<input type="password" name="secert" class="secert" value="<?php echo sanatize($secert); ?>" onmouseover="this.setAttribute('type', 'text')" onmouseout="this.setAttribute('type', 'password')"/>
+								<input type="password" name="secert" class="secert" value="<?php echo sanatize($secret); ?>" onmouseover="this.setAttribute('type', 'text')" onmouseout="this.setAttribute('type', 'password')"/>
 							</td>
 						</tr>
 						<?php } ?>
