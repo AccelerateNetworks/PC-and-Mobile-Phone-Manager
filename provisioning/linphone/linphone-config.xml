@@ -6,7 +6,7 @@
   <entry name="reg_expires">1</entry>
   <entry name="reg_sendergister">1</entry>
 </section>
-<secton name="auth_0">
+<section name="auth_0">
   <entry name="username">{$extension.extension}</entry>
   <entry name="userid">{$extension.extension}</entry>
   <entry name="passwd">{$extension.password}</entry>
