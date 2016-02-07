@@ -6,7 +6,7 @@ function do_provision($extension, $token, $db) {
     if($_SERVER['HTTPS'] != "") {
       $redirect_uri .= "s";
     }
-    $redirect_uri .= "%3A//".$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF'];
+    $redirect_uri .= "%3A//".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
     $redirect_uri .= "?secret=".$_GET['secret']."&noredirect=";
     header("Location: $redirect_uri");
     echo "<h1>We're provisioning Linphone, sit tight...";
