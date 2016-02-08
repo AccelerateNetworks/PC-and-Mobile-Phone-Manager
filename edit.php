@@ -98,7 +98,7 @@ if(count($_POST) > 0) {
 						<tr>
 							<td class="vncellreq" valign="top" align="left" nowrap="nowrap">Extension</td>
 							<td class="vtable" valign="top" align="left" nowrap="nowrap">
-								<input type="text" name="extension" value="<?php echo sanatize($extension); ?>" class="extension" />
+								<input type="text" name="extension" value="<?php echo sanatize($extension); ?>" class="typeahead extension" />
 							</td>
 						</tr>
 						<tr>
