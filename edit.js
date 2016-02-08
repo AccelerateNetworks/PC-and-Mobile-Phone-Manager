@@ -1,5 +1,5 @@
 function extensionSuggestions(q, cb) {
-  $.get("extension-suggest.php").then(function(results) {
+  $.get("extension-suggest.php?q=" + q).then(function(results) {
     var out = [];
     JSON.parse(results).forEach(function(extension) {
       out.push(extension.extension + "@" + extension.domain_name);
