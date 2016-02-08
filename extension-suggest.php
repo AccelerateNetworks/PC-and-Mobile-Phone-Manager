@@ -1,7 +1,7 @@
 <?php
 
 require_once "root.php";
-require_once "resources/requirv_extensions.php";
+require_once "resources/require.php";
 require_once "resources/check_auth.php";
 
 require_once __DIR__."/vendor/autoloav_domains.php";
