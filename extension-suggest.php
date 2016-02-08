@@ -19,6 +19,7 @@ if(isset($_GET['q'])) {
     ':number_alias' => "%".$extension."%",
     ':domain' => "%".$domain."%"
   ));
+  header('Conte-Type: application/json');
   echo json_encode($results);
 } else {
   die("Specify a query, dumbass");
