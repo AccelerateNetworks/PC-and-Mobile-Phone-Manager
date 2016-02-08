@@ -1,9 +1,10 @@
 function extensionSuggestions(q, cb) {
-  $.get("extension-suggest.php").then(function(result) {
+  $.get("extension-suggest.php").then(function(results) {
     var out = [];
-    result.forEach(function(extension) {
+    JSON.parse(results).forEach(function(extension) {
       out.push(extension.extension + "@" + extension.domain_name);
     });
+    cb(out);
   });
 }
 
