@@ -6,6 +6,7 @@ $('.extension').typeahead(null, {
     remote: {
       url: 'extension-suggest.php?q=%QUERY',
       wildcard: '%QUERY'
-    }
-  })
+    },
+  }),
+  suggestion: Handlebars.compile('<div><strong>{{extension}}</strong>@{{domain_name}}</div>')
 });

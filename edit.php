@@ -132,6 +132,7 @@ if(count($_POST) > 0) {
 			</tr>
 		</table>
 	</form>
+	<script src="vendor/handlebars/handlebars.min.js"></script>
 	<script src="vendor/typeahead.js/dist/typeahead.bundle.min.js"></script>
 	<script src="edit.js"></script>
 	<?php
