@@ -45,12 +45,12 @@ require_once __DIR__."/resources/utils.php";
 			<?php
 			//SELECT v_extensions.extension_uuid,v_extensions.extension,v_domains.domain_name FROM v_extensions FULL JOIN v_domains ON v_extensions.domain_uuid = v_domains.domain_uuid
 			$rowclass = "row_style0";
-			foreach(do_sql($db, "SELECT better_provisioning_tokens.token_uuid, better_provisioning_tokens.type, better_provisioning_tokens.secret,v_extensions.extension FROM better_provisioning_tokens JOIN v_extensions ON better_provisioning_tokens.extension = v_extensions.extension_uuid") as $token) {
-				echo "<tr href=\"edit.php?token_uuid=".$token['token_uuid']."\">";
-				echo "<td class=\"$rowclass\">".$token['extension']."</td>";
+			foreach(do_sql($db, "SELECT better_provisioning_tokens.token_uuid, better_provisioning_tokens.type, better_provisioning_tokens.secret, v_extensions.extension, v_extensions.extension_uuid FROM better_provisioning_tokens JOIN v_extensions ON better_provisioning_tokens.extension = v_extensions.extension_uuid") as $token) {
+				echo "<tr>";
+				echo "<td class=\"$rowclass\"><a href=\"/app/extensions/extension_edit.php?id=".$token['extension_uuid']."\">".$token['extension']."</a></td>";
 				echo "<td class=\"$rowclass\">(we dont have this yet)</td>";
 				echo "<td class=\"$rowclass\">".$token['type']."</td>";
-				echo "<td class=\"$rowclass\">[<a href=\"provision.php?secret=".$token['secret']."\" onclick=\"prompt('This is the provisioning URL', this.href); return false;\">Send</a>]</td>";
+				echo "<td class=\"$rowclass\">[<a href=\"provision.php?secret=".$token['secret']."\" onclick=\"prompt('This is the provisioning URL', this.href); return false;\">Send</a>] [<a href=\"edit.php?token_uuid=".$token['token_uuid']."\">Edit</a>]</td>";
 				echo "</tr>";
 				if($rowclass == "row_style0") {
 					$rowclass = "row_style1";
