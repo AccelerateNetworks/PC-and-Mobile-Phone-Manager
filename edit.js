@@ -4,6 +4,7 @@ function extensionSuggestions(q, cb) {
     JSON.parse(results).forEach(function(extension) {
       out.push(extension.extension + "@" + extension.domain_name);
     });
+    console.log(out);
     cb(out);
   });
 }
