@@ -12,9 +12,9 @@ if(isset($_GET['q'])) {
   $domain = "";
   $uuid = "";
   if(strpos($_GET['q'], '@')) {
-    list($extension,$domain) = explode("@", $_GET['q'], 2);
+    list($extension, $domain) = explode("@", $_GET['q'], 2);
   }
-  if(count(preg_match("/[\da-f]{8}-?([\da-f]{4}-?){3}[\da-f]{12}/i", $_GET['q']) == 1)) {
+  if(preg_match("/[\da-f]{8}-?([\da-f]{4}-?){3}[\da-f]{12}/i", $_GET['q']) == 1) {
     $uuid = $_GET['q'];
   }
 
