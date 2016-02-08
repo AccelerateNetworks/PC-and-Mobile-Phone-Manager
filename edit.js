@@ -1,19 +1,11 @@
-function extensionSuggestions(q, cb) {
-  $.get("extension-suggest.php?q=" + q).then(function(results) {
-    var out = [];
-    JSON.parse(results).forEach(function(extension) {
-      out.push(extension.extension + "@" + extension.domain_name);
-    });
-    console.log(out);
-    cb(out);
-  });
-}
-
-$('.extension').typeahead({
-  hint: true,
-  highlight: true,
-  minLength: 1
-}, {
+$('.extension').typeahead(null, {
   name: 'extensions',
-  source: extensionSuggestions
+  source:  new Bloodhound({
+    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    remote: {
+      url: 'extension-suggest.php?q=%QUERY',
+      wildcard: '%QUERY'
+    }
+  })
 });
