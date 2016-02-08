@@ -45,7 +45,7 @@ require_once __DIR__."/resources/utils.php";
 			<?php
 			//SELECT v_extensions.extension_uuid,v_extensions.extension,v_domains.domain_name FROM v_extensions FULL JOIN v_domains ON v_extensions.domain_uuid = v_domains.domain_uuid
 			$rowclass = "row_style0";
-			foreach(do_sql($db, "SELECT better_provisioning_tokens.token_uuid, better_provisioning_tokens.type, better_provisioning_tokens.secret,v_extensions.extension FROM better_provisioning_tokens FULL JOIN v_extensions ON better_provisioning_tokens.extension = v_extensions.extension_uuid") as $token) {
+			foreach(do_sql($db, "SELECT better_provisioning_tokens.token_uuid, better_provisioning_tokens.type, better_provisioning_tokens.secret,v_extensions.extension FROM better_provisioning_tokens JOIN v_extensions ON better_provisioning_tokens.extension = v_extensions.extension_uuid") as $token) {
 				echo "<tr href=\"edit.php?token_uuid=".$token['token_uuid']."\">";
 				echo "<td class=\"$rowclass\">".$token['extension']."</td>";
 				echo "<td class=\"$rowclass\">(we dont have this yet)</td>";
