@@ -10,7 +10,7 @@ $(document).ready(function() {
       },
     }),
     templates: {
-      suggestion: Handlebars.compile('<div><strong>{{extension}}</strong>@{{domain_name}}</div>'),
+      suggestion: Handlebars.compile('<div class="tt-suggestion tt-selectable"><strong>{{extension}}</strong>@{{domain_name}}</div>'),
     },
     display: function(suggestion) { return suggestion.extension_uuid; }
   });

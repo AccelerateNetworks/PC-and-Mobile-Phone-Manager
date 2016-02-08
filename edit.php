@@ -13,6 +13,7 @@ $text = $language->get();
 
 //additional includes
 require_once "resources/header.php";
+?><link rel="stylesheet" href="typeahead.css" /><?php
 require_once "resources/paging.php";
 require_once __DIR__."/vendor/autoload.php";
 require_once __DIR__."/resources/utils.php";
