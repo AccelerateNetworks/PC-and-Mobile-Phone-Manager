@@ -98,7 +98,7 @@ if(count($_POST) > 0) {
 						<tr>
 							<td class="vncellreq" valign="top" align="left" nowrap="nowrap">Extension</td>
 							<td class="vtable" valign="top" align="left" nowrap="nowrap">
-								<input type="text" name="extension" value="<?php echo sanatize($extension); ?>" class="typeahae" id="extension" />
+								<input type="text" name="extension" value="<?php echo sanatize($extension); ?>" class="typeahead" id="extension" />
 							</td>
 						</tr>
 						<tr>
@@ -132,7 +132,7 @@ if(count($_POST) > 0) {
 			</tr>
 		</table>
 	</form>
-	<script src="vendor/typeahead.js/dist/typeahead.jquery.min.js"></script>
+	<script src="vendor/typeahead.js/dist/typeahead.bundle.min.js"></script>
 	<script src="edit.js"></script>
 	<?php
 require "footer.php";
