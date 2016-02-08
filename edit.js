@@ -12,6 +12,6 @@ $(document).ready(function() {
     templates: {
       suggestion: Handlebars.compile('<div><strong>{{extension}}</strong>@{{domain_name}}</div>'),
     },
-    display: function(suggestion) { return extension.extension_uuid; }
+    display: function(suggestion) { return suggestion.extension_uuid; }
   });
 });
