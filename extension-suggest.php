@@ -14,10 +14,11 @@ if(isset($_GET['q'])) {
     list($extension,$domain) = explode("@", $_GET['q'], 2);
   }
 
-  $results = do_sql($db, "SELECT v_extensions.extension_uuid,v_extensions.extension,v_domains.domain_name FROM v_extensions FULL JOIN v_domains ON v_extensions.domain_uuid = v_domains.domain_uuid WHERE (v_extensions.extension LIKE :extension OR v_extensions.number_alias LIKE :number_alias) AND v_domains.domain_name LIKE :domain;", array(
+  $results = do_sql($db, "SELECT v_extensions.extension_uuid,v_extensions.extension,v_domains.domain_name FROM v_extensions FULL JOIN v_domains ON v_extensions.domain_uuid = v_domains.domain_uuid WHERE (v_extensions.extension LIKE :extension AND v_domains.domain_name LIKE :domain) OR (v_extensions.extension_uuid = :query);", array(
     ':extension' => "%".$extension."%",
     ':number_alias' => "%".$extension."%",
-    ':domain' => "%".$domain."%"
+    ':domain' => "%".$domain."%",
+    ':query' => $_GET['q']
   ));
   header('Conte-Type: application/json');
   echo json_encode($results);
