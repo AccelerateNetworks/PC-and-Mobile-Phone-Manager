@@ -10,7 +10,7 @@ require_once __DIR__."/resources/utils.php";
 if(isset($_GET['q'])) {
   $extension = $_GET['q'];
   $domain = "";
-  $uuid = "";
+  $uuid = NULL;
   if(strpos($_GET['q'], '@')) {
     list($extension, $domain) = explode("@", $_GET['q'], 2);
   }
@@ -18,7 +18,7 @@ if(isset($_GET['q'])) {
     $uuid = $_GET['q'];
   }
 
-  $results = do_sql($db, "SELECT v_extensions.extension_uuid,v_extensions.extension,v_domains.domain_name FROM v_extensions FULL JOIN v_domains ON v_extensions.domain_uuid = v_domains.domain_uuid WHERE (v_extensions.extension LIKE :extension AND v_domains.domain_name LIKE :domain) OR (v_extensions.extension_uuid = :uuid) LIMIT 30;", array(
+  $results = do_sql($db, "SELECT v_extensions.extension_uuid,v_extensions.extension,v_domains.domain_name FROM v_extensions FULL JOIN v_domains ON v_extensions.domain_uuid = v_domains.domain_uuid WHERE (v_extensions.extension LIKE :extension AND v_domains.domain_name LIKE :domain) OR (:uuid IS NOT NULL AND v_extensions.extension_uuid = :uuid) LIMIT 30;", array(
     ':extension' => "%".$extension."%",
     ':domain' => "%".$domain."%",
     ':uuid' => $uuid
