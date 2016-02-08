@@ -16,5 +16,8 @@
     "vendor",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "typeahead.js": "^0.11.1"
+  }
 }
