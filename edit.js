@@ -9,6 +9,7 @@ $(document).ready(function() {
         wildcard: '%QUERY'
       },
     }),
-    suggestion: Handlebars.compile('<div><strong>{{extension}}</strong>@{{domain_name}}</div>')
+    suggestion: Handlebars.compile('<div><strong>{{extension}}</strong>@{{domain_name}}</div>'),
+    display: function(suggestion) { return extension.extension_uuid; }
   });
 });
