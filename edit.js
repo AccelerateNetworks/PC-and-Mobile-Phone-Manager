@@ -8,7 +8,7 @@ function extensionSuggestions(q, cb) {
   });
 }
 
-$('.extension').typeahead({
+$('#extension .typeahead').typeahead({
   hint: true,
   highlight: true,
   minLength: 1
