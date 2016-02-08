@@ -21,7 +21,7 @@ if(isset($_GET['q'])) {
   $results = do_sql($db, "SELECT v_extensions.extension_uuid,v_extensions.extension,v_domains.domain_name FROM v_extensions FULL JOIN v_domains ON v_extensions.domain_uuid = v_domains.domain_uuid WHERE (v_extensions.extension LIKE :extension AND v_domains.domain_name LIKE :domain) OR (v_extensions.extension_uuid = :uuid) LIMIT 30;", array(
     ':extension' => "%".$extension."%",
     ':domain' => "%".$domain."%",
-    ':uuid' => $_GET['q']
+    ':uuid' => $uuid
   ));
   header('Conte-Type: application/json');
   echo json_encode($results);
