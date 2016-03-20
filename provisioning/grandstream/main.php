@@ -21,7 +21,7 @@ function do_initial_provision($mac) {
     $secret = bin2hex(openssl_random_pseudo_bytes(16));
     $adminpw = CryptoLib::randomString(10);
     $userpw = CryptoLib::randomString(10);
-    do_sql("INSERT INTO better_provisioning_otkens('token_uuid', 'secret', 'mac', 'admin_pw', 'user_pw') VALUES (:token, :secret, :mac, :adminpw, :userpw)",
+    do_sql("INSERT INTO better_provisioning_tokens('token_uuid', 'secret', 'mac', 'admin_pw', 'user_pw') VALUES (:token, :secret, :mac, :adminpw, :userpw)",
            array(':token' => $token, ':secret' => $secret, ':mac' => $mac, ':adminpw' => $adminpw, ':userpw' => $userpw));
     $smarty = new Smarty();
     $smarty->assign("secret", $secret);
