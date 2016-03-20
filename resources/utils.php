@@ -201,7 +201,8 @@ function install_cron($test=False) {
 }
 
 // executes an SQL query
-function do_sql($db, $query, $args=array()) {
+function do_sql($query, $args=array()) {
+  global $db;
   $statement = $db->prepare(check_sql($query));
   if($statement) {
     $result = $statement->execute($args);

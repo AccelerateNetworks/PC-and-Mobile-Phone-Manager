@@ -44,21 +44,19 @@ if(count($_POST) > 0) {
 
 	if($_POST['token_uuid']) {
 		$token_uuid = $_POST['token_uuid'];
-		do_sql($db,
-			"UPDATE better_provisioning_tokens SET extension = :extension, type = :type, secret = :secret WHERE token_uuid = :token_uuid",
+		do_sql("UPDATE better_provisioning_tokens SET extension = :extension, type = :type, secret = :secret WHERE token_uuid = :token_uuid",
 			array(':token_uuid' => $token_uuid, ':extension' => $extension, ':type' => $type, ':secret' => $secret)
 		);
 	} else {
 		$token_uuid = uuid();
-		do_sql($db,
-			"INSERT INTO better_provisioning_tokens(token_uuid, extension, type, secret) VALUES (:token_uuid, :extension, :type, :secret)",
+		do_sql("INSERT INTO better_provisioning_tokens(token_uuid, extension, type, secret) VALUES (:token_uuid, :extension, :type, :secret)",
 			array(':token_uuid' => $token_uuid, ':extension' => $extension, ':type' => $type, ':secret' => $secret)
 		);
 	}
 } else {
 	if(isset($_GET['token_uuid'])) {
 		$token_uuid = $_GET['token_uuid'];
-		$row = do_sql($db, "SELECT extension,type,secret FROM better_provisioning_tokens WHERE token_uuid = :token_uuid", array(':token_uuid' => $token_uuid));
+		$row = do_sql("SELECT extension,type,secret FROM better_provisioning_tokens WHERE token_uuid = :token_uuid", array(':token_uuid' => $token_uuid));
 		if(count($row) > 0) {
 			$extension = $row[0]['extension'];
 			$type = $row[0]['type'];
