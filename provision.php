@@ -19,7 +19,7 @@ if(isset($_GET['secret'])) {
   if(isset($mac_regex['mac'])) {
     $prefix = substr($mac_regex['mac'], 0, 6);
     if(array_key_exists($prefix, $oui_prefixes)) {
-      $type = $oui_prefix[$prefix];
+      $type = $oui_prefixes[$prefix];
       require(__DIR__."/provisioning/".$type."/main.php");
       do_initial_provision($mac_regex['mac']);
     } else {
