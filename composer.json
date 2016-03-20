@@ -12,5 +12,8 @@
             "email": "finn@callpipe.com"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "require-dev": {
+        "IcyApril/CryptoLib": "dev-master"
+    }
 }

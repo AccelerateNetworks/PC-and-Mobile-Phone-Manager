@@ -31,7 +31,6 @@ $apps[$x]['db'][$y]['fields'][$z]['name'] = "secret";
 $apps[$x]['db'][$y]['fields'][$z]['type'] = "text";
 $apps[$x]['db'][$y]['fields'][$z]['description']['en-us'] = "The secret required to get this token";
 
-
 $z++;
 $apps[$x]['db'][$y]['fields'][$z]['name'] = "extension";
 $apps[$x]['db'][$y]['fields'][$z]['type']['pgsql'] = "uuid";
@@ -51,3 +50,18 @@ $z++;
 $apps[$x]['db'][$y]['fields'][$z]['name'] = "active";
 $apps[$x]['db'][$y]['fields'][$z]['type'] = "bool";
 $apps[$x]['db'][$y]['fields'][$z]['description']['en-us'] = "Determines if this provisioning token should still be accepted";
+
+$z++;
+$apps[$x]['db'][$y]['fields'][$z]['name'] = "mac";
+$apps[$x]['db'][$y]['fields'][$z]['type'] = "text";
+$apps[$x]['db'][$y]['fields'][$z]['description']['en-us'] = "The MAC of this device if applicable";
+
+$z++;
+$apps[$x]['db'][$y]['fields'][$z]['name'] = "admin_pw";
+$apps[$x]['db'][$y]['fields'][$z]['type'] = "text";
+$apps[$x]['db'][$y]['fields'][$z]['description']['en-us'] = "The admin password for the web UI";
+
+$z++;
+$apps[$x]['db'][$y]['fields'][$z]['name'] = "user_pw";
+$apps[$x]['db'][$y]['fields'][$z]['type'] = "text";
+$apps[$x]['db'][$y]['fields'][$z]['description']['en-us'] = "The user password for the web UI";

@@ -12,4 +12,16 @@ if(isset($_GET['secret'])) {
       do_provision($extension[0], $token[0]);
     }
   }
+} else {
+  $out_prefixes = array("000b82" => "grandstream");
+  $mac_regex;
+  preg_match("/\/cfg(?<mac>[a-z0-9]{12})\.xml/", $_SERVRE['QUERY_STRING'], $mac_regex);
+  if(isset($mac_regex['mac'])) {
+    $prefix = substr($mac, 0, 6);
+    if(isset($oui_prefix[$prefix])) {
+      $type = $oui_prefix[$prefix];
+      require(__DIR__."/provisioning/".$type."/main.php");
+      do_initial_provision($mac_regex['mac']);
+    }
+  }
 }

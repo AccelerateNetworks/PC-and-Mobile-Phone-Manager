@@ -1,0 +1,24 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<gs_provision version="1">
+  <config version="1">
+    <!-- End User Password (we should be randomly generating this) -->
+    <P196>{$userpw}</P196>
+    <!-- Admin password for web interface (we should be randomly generating this) -->
+    <P2>{$adminpw}</P2>
+    <!-- Always Check For New Firmware -->
+    <P238>0</P238>
+    <!-- HTTP/HTTPS User Name -->
+    <P1360></P1360>
+    <!-- HTTP/HTTPS Password -->
+    <P1361></P1361>
+    <!-- lock it to our provisioning server -->
+    <P237>{$provisioning_uri}</P237>
+    <!-- and our firmware server -->
+    <P192>{$firmware_uri}</P192>
+    <!-- require provisioning over HTTPS -->
+    <P212>2</P212>
+    <!-- feed it the provisioning crypto key -->
+    <P1359>{$secret}</P1359>
+  </config>
+</gs_provision>
