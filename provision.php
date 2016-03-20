@@ -22,6 +22,10 @@ if(isset($_GET['secret'])) {
       $type = $oui_prefix[$prefix];
       require(__DIR__."/provisioning/".$type."/main.php");
       do_initial_provision($mac_regex['mac']);
+    } else {
+      die("OUI Prefix ".$prefix." not recognized!");
     }
+  } else {
+    die("Please specify a secret!");
   }
 }
