@@ -17,7 +17,7 @@ if(isset($_GET['secret'])) {
   $mac_regex;
   preg_match("/\/cfg(?<mac>[a-z0-9]{12})\.xml/", $_SERVRE['QUERY_STRING'], $mac_regex);
   if(isset($mac_regex['mac'])) {
-    $prefix = substr($mac, 0, 6);
+    $prefix = substr($mac_regex['mac'], 0, 6);
     if(isset($oui_prefix[$prefix])) {
       $type = $oui_prefix[$prefix];
       require(__DIR__."/provisioning/".$type."/main.php");
