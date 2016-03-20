@@ -9,7 +9,7 @@ if(isset($_GET['secret'])) {
     $extension = do_sql("SELECT * FROM v_extensions WHERE extension_uuid = :extension_uuid", array(':extension_uuid' => $token[0]['extension']));
     if(file_exists(__DIR__."/provisioning/".$token[0]['type']."/main.php")){
       require(__DIR__."/provisioning/".$token[0]['type']."/main.php");
-      do_provision($extension[0], $token[0], $db);
+      do_provision($extension[0], $token[0]);
     }
   }
 }

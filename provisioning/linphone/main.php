@@ -1,5 +1,6 @@
 <?php
-function do_provision($extension, $token, $db) {
+function do_provision($extension, $token) {
+  global $db;
   if(!isset($_GET['noredirect'])) {
     $redirect_uri = "linphone-config://";
     $redirect_uri .= "http";
