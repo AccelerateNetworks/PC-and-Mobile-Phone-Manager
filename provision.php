@@ -13,7 +13,7 @@ if(isset($_GET['secret'])) {
     }
   }
 } else {
-  $out_prefixes = array("000b82" => "grandstream");
+  $oui_prefixes = array("000b82" => "grandstream");
   $mac_regex;
   preg_match("/\/cfg(?<mac>[a-z0-9]{12})\.xml/", $_SERVER['QUERY_STRING'], $mac_regex);
   if(isset($mac_regex['mac'])) {
