@@ -11,19 +11,8 @@
 </section>
 <section name="auth_info_0">
   <entry name="username">{$extension.extension}</entry>
+  <entry name="userid">{$extension.extension}</entry>
   <entry name="passwd">{$extension.password}</entry>
   <entry name="realm">{$extension.user_context}</entry>
-  <entry name="domain">{$extension.user_context}</entry>
-</section>
-<section name="misc">
-  <entry name="file_transfer_server_url" overwrite="true">https://{$extension.user_context}/app/better-provisioning/sharing.php</entry>
-  <entry name="log_collection_upload_server_url" overwrite="true">https://{$extension.user_context}/app/better-provisioning/log_collection.php</entry>
-</section>
-<section name="sip">
-  <entry name="media_encryption">zrtp</entry>
-  <entry name="use_ipv6">1</entry>
-</section>
-<section name="app">
-  <entry name="sharing_server" overwrite="true">https://{$extension.user_context}/app/better-provisioning/sharing.php</entry>
 </section>
 </config>
