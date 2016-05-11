@@ -15,13 +15,13 @@
   <entry name="realm">{$extension.accountcode}</entry>
 </section>
 <section name="misc">
-  <entry name="file_transfer_server_url">https://{$extension.accountcode}/app/better-provisioning/sharing.php</entry>
-  <entry name="log_collection_upload_server_url">https://{$extension.accountcode}/app/better-provisioning/log_collection.php</entry>
+  <entry name="file_transfer_server_url" overwrite="true">https://{$extension.accountcode}/app/better-provisioning/sharing.php</entry>
+  <entry name="log_collection_upload_server_url" overwrite="true">https://{$extension.accountcode}/app/better-provisioning/log_collection.php</entry>
 </section>
 <section name="sip">
   <entry name="default_proxy">0</entry>
 </section>
 <section name="app">
-  <entry name="sharing_server">https://{$extension.accountcode}/app/better-provisioning/sharing.php</entry>
+  <entry name="sharing_server" overwrite="true">https://{$extension.accountcode}/app/better-provisioning/sharing.php</entry>
 </section>
 </config>
