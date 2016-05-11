@@ -19,6 +19,7 @@ function do_provision($extension, $token) {
     if($_GET['noredirect'] == "debug") {
       $smarty->debugging = true;
     }
+    header("Content-Type: application/xml");
     $smarty->display(__DIR__."/linphone-config.xml");
   }
 }
