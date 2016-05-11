@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config xmlns="http://www.linphone.org/xsds/lpconfig.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.linphone.org/xsds/lpconfig.xsd lpconfig.xsd">
-  <section name="sip">
-    <entry name="sip_port">-1</entry>
-    <entry name="sip_tcp_port">-1</entry>
-    <entry name="sip_tls_port">-1</entry>
-    <entry name="default_proxy">0</entry>
-    <entry name="use_ipv6">1</entry>
-  </section>
   <section name="auth_info_0">
     <entry name="username">{$extension.extension}</entry>
     <entry name="userid">{$extension.extension}</entry>
@@ -21,6 +14,13 @@
     <entry name="quality_reporting_interval">60</entry>
     <entry name="reg_expires">3600</entry>
     <entry name="reg_sendergister">1</entry>
+  </section>
+  <section name="sip">
+    <entry name="sip_port">-1</entry>
+    <entry name="sip_tcp_port">-1</entry>
+    <entry name="sip_tls_port">-1</entry>
+    <entry name="default_proxy">0</entry>
+    <entry name="use_ipv6">1</entry>
   </section>
   <section name="app">
     <entry name="show_login_view" overwrite="true">0</entry>
