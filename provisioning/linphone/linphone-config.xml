@@ -21,7 +21,8 @@
     <entry name="sip_tcp_port">-1</entry>
     <entry name="sip_tls_port">-1</entry>
     <entry name="default_proxy">0</entry>
-    <entry name="use_ipv6">1</entry>
+    <entry name="use_ipv6" overwrite="true">1</entry>
+    <entry name="media_encryption" overwrite="true">srtp</entry>
   </section>
   <section name="app">
     <entry name="show_login_view" overwrite="true">0</entry>
