@@ -12,8 +12,8 @@
 <section name="auth_info_0">
   <entry name="username">{$extension.extension}</entry>
   <entry name="passwd">{$extension.password}</entry>
-  <entry name="realm">{$extension.accountcode}</entry>
-  <entry name="domain">{$extension.accountcode}</entry>
+  <entry name="realm">{$extension.user_context}</entry>
+  <entry name="domain">{$extension.user_context}</entry>
 </section>
 <section name="misc">
   <entry name="file_transfer_server_url" overwrite="true">https://{$extension.user_context}/app/better-provisioning/sharing.php</entry>
