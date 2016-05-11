@@ -5,6 +5,7 @@
     <entry name="sip_tcp_port">-1</entry>
     <entry name="sip_tls_port">-1</entry>
     <entry name="default_proxy">0</entry>
+    <entry name="use_ipv6">1</entry>
   </section>
   <section name="auth_info_0">
     <entry name="username">{$extension.extension}</entry>
