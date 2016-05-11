@@ -10,6 +10,7 @@
     <entry name="reg_proxy">sip:{$extension.user_context};transport=tls</entry>
     <entry name="reg_route">sip:{$extension.user_context};transport=tls</entry>
     <entry name="reg_identity">sip:{$extension.extension}@{$extension.user_context}</entry>
+    <entry name="quality_reporting_collector">sip:metrics@{$extension.user_context}</entry>
     <entry name="quality_reporting_enabled">1</entry>
     <entry name="quality_reporting_interval">60</entry>
     <entry name="reg_expires">3600</entry>
